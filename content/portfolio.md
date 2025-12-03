@@ -14,7 +14,7 @@ These are the projects I have done so far!
 ## Django Based AI API inference server
 [Github Link](https://github.com/Vjay15/django_ai_api)
 ![Django Screenshot](https://github.com/Vjay15/django_ai_api/raw/main/sample/1.jpg)
->Note: The Streamlit Frontend was created to showcase how it works
+> Note: The Streamlit Frontend was created to showcase how it works
 
 #### Libraries used: Django, vLLM, Streamlit
 
