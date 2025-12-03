@@ -262,6 +262,30 @@ nav a:hover {
     margin-bottom: 0;
 }
 
+.recent-blogs-section {
+    width: 100%;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+    margin-top: 2rem;
+}
+
+.recent-blogs-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5em;
+}
+
+.recent-blogs-section .blog-list {
+    margin-bottom: 1.5rem;
+}
+
+.recent-blogs-section .view-all-link {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
 .profile-section {
     flex-shrink: 0;
 }
