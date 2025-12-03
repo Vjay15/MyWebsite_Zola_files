@@ -116,10 +116,14 @@ blockquote {
     border-left: 4px solid #555;
     background: var(--bg-card);
     padding: 1em;
-    margin-left: 0;
+    margin: 1em 0;
     color: #b0b0b0;
     font-style: italic;
     border-radius: 3px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 img {
@@ -464,5 +468,10 @@ footer {
     blockquote {
         padding: 0.75em;
         margin: 1em 0;
+        border-left-width: 3px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }

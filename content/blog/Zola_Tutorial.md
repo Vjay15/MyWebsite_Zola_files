@@ -9,6 +9,7 @@ Finally after years of procrastination and laziness, the stars have aligned and 
 
 ## SSG (Static Site Generators)
 First of all let's get started with what an SSG is, according to Mozilla docs
+
 >A static site generator (SSG) is a software used to generate static websites. A static website is comprised of HTML, CSS, and JavaScript files. Most importantly static sites do not have server-side logic, so for any given URL, all users will receive the same content. Authors write content in any form accepted by the generator, such as Markdown, reStructuredText, HTML, (and sometimes even React, and so on), and the generator compiles them into a set of optimized static files that can be rendered by the browser.
 
 In short this allows you to just focus on writing content using markdown or any required format and the SSG automatically converts it into the required HTML files. This allows for less headaches in formatting the HTML page and instead focus on writing content using Markdown, which is very easy!
@@ -183,4 +184,6 @@ The values will be autofilled since you had already given the username/repositor
 I hope you guys learnt something out of this, do make your own profile/blog page its fun to learn stuff and share it to people!
 
 More random blogs coming soon so stay tuned! Have an epic day.
+
+#### Link to the repository: [Link](https://github.com/Vjay15/MyWebsite_Zola_files)
 

@@ -16,7 +16,7 @@ If you have any recommendations do let me know :D
 - [ ] Try out atleast 4 different cuisines (in 2026)
 - [ ] Go on a solo road trip on a motorcycle
 - [ ] Create a library at home
-- [ ] Fall in love (optional)
+- [ ] Fall in love (maybe?)
 - [ ] Live away from home for a long time (live alone)
 - [ ] Learn four languages (German, Japanese, Arabic, last one should be very obscure)
 - [ ] Camp in Iceland

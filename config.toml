@@ -20,7 +20,8 @@ navbar_items = [
     { name = "About", url = "/about" },
     { name = "Portfolio", url = "/portfolio" },
     { name = "Blog", url = "/blog" },
-    { name="Bucket List", url="/bucketlist"}
+    { name="Bucket List", url="/bucketlist"},
+    { name="Resume", url="/files/Resume.pdf"}
 ]
 
 # Social links for footer (logos are automatically used)
