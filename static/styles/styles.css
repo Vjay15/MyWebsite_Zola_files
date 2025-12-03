@@ -207,7 +207,8 @@ nav {
     transition: all 0.2s;
 }
 
-nav ul {
+nav ul,
+.nav-menu {
     list-style: none;
     display: flex;
     gap: 1.5rem;
@@ -398,7 +399,8 @@ footer {
         position: relative;
     }
     
-    nav ul {
+    nav ul,
+    .nav-menu {
         display: none;
         position: absolute;
         top: 100%;
@@ -413,7 +415,8 @@ footer {
         z-index: 100;
     }
     
-    nav ul.active {
+    nav ul.active,
+    .nav-menu.active {
         display: flex;
     }
     

@@ -28,11 +28,17 @@
     </div>
   </nav>
   <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const menu = document.querySelector('.nav-menu');
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      menu.classList.toggle('active');
-      this.setAttribute('aria-expanded', !isExpanded);
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          navMenu.classList.toggle('active');
+          this.setAttribute('aria-expanded', !isExpanded);
+        });
+      }
     });
   </script>
   
@@ -42,25 +48,6 @@
     </div>
   </section>
   
-  {% set blog_section = get_section(path="blog/_index.md") %}
-  {% if blog_section.pages %}
-    <section class="recent-blogs-section">
-      <div class="container">
-        <h2>Recent Posts</h2>
-        <ul class="blog-list">
-          {% for page in blog_section.pages | slice(end=5) %}
-            <li>
-              <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-              {% if page.date %}
-                <span class="date">{{ page.date | date(format="%B %d, %Y") }}</span>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-        <p class="view-all-link"><a href="{{ get_url(path="blog") }}">View all posts →</a></p>
-      </div>
-    </section>
-  {% endif %}
   
   <footer>
     <div class="footer-container">
