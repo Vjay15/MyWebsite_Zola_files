@@ -29,7 +29,7 @@ brew install zola
 
 **Note:** [Installation Page](https://www.getzola.org/documentation/getting-started/installation/)
 
-Since I am hosting this on github pages, I created a repository with my username "vjay15.github.io", you can have a gitignore, otherwise it could be left empty. Clone the repository locally and cd to the directory (The present working directory should be the repository's folder), then
+Since I am hosting this on github pages, I created a repository with my username "vjay15.github.io" and another repository where the website files are hosted, you can have a gitignore, otherwise it could be left empty. Clone the repositories locally and cd to the directory (The present working directory should be the website file repository's folder), then
 ```bash
 zola init #in case you have added LICENSE do -f
 ```
@@ -108,7 +108,7 @@ and is displayed by looping through the items, in the base.html file
 The get_url is a built in function provided by Zola to fetch the permalink of the pages. You can then choose your favourite AI or LLM tool to generate a minimalist CSS template for your website. Test it out and check if it all works and looks well :D
 
 ### Setting up Github Pages for Zola
-In order to finally deploy it on Github pages, create a main.yml file under ```.github/workflows``` and add the following YAML code. This is under the assumption that the page is going to be deployed in the same repository itself
+In order to finally deploy it on Github pages, create a main.yml file under ```.github/workflows``` and add the following YAML code. This is under the assumption that the page is going to be deployed in another repository. Before that make sure the DEPLOY_TOKEN is added to the secrets of the repository (This is a personal access token, check how to make one here: [Link](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens))
 ```yaml
 # On every push this script is executed
 on:
@@ -117,22 +117,34 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
+
 name: Build and deploy GH Pages
 jobs:
   build:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: checkout
+      - name: Checkout source repository
         uses: actions/checkout@v4
-      - name: build_and_deploy
-        uses: shalzz/zola-deploy-action@master
-        env:
-          # Target branch
-          PAGES_BRANCH: main
-          # Or if publishing to the same repo, use the automatic token
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Install Zola
+        run: |
+          curl -L https://github.com/getzola/zola/releases/download/v0.18.0/zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv zola /usr/local/bin
+      
+      - name: Build Zola site
+        run: zola build
+      
+      - name: Deploy to vjay15.github.io repository
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: Vjay15/vjay15.github.io
+          publish_dir: ./public
+          publish_branch: main
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
 ```
 
 In case you are publishing this website to elsewhere I suggest you to check the documentation: [Link](https://www.getzola.org/documentation/deployment/github-pages/)
