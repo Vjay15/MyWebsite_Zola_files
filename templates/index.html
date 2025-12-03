@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="homepage">
+  <div class="homepage-content">
+    {{ section.content | safe }}
+    
+    {% set blog_section = get_section(path="blog/_index.md") %}
+    {% if blog_section.pages %}
+      <div class="recent-blogs">
+        <h2>Recent Posts</h2>
+        <ul class="blog-list">
+          {% for page in blog_section.pages | slice(end=5) %}
+            <li>
+              <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+              {% if page.date %}
+                <span class="date">{{ page.date | date(format="%B %d, %Y") }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <p><a href="{{ get_url(path="blog") }}">View all posts →</a></p>
+      </div>
+    {% endif %}
+  </div>
+  <div class="profile-section">
+    <img src="{{ get_url(path="images/dodgepfp.png") }}" alt="Profile Picture" class="profile-picture">
+  </div>
+</div>
+{% endblock content %}

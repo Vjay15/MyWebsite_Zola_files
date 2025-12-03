@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+
+{% if section.pages %}
+  <ul class="blog-list">
+    {% for page in section.pages | reverse %}
+      <li>
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+        {% if page.date %}
+          <span class="date">{{ page.date | date(format="%B %d, %Y") }}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No blog posts yet. Check back soon!</p>
+{% endif %}
+{% endblock content %}
