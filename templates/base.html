@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% else %}MyBlog{% endif %}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ get_url(path="styles/styles.css") }}">
 </head>
 
@@ -52,25 +51,13 @@
   <footer>
     <div class="footer-container">
       <div class="social-links">
-        {% if config.extra.github_url %}
-        <a href="{{ config.extra.github_url }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        {% else %}
-        <a href="#" aria-label="GitHub">
-        {% endif %}
+        <a href="{{ config.extra.github_url | default(value="#") }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <img src="{{ get_url(path="images/github.png") }}" alt="GitHub" class="social-icon">
         </a>
-        {% if config.extra.linkedin_url %}
-        <a href="{{ config.extra.linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        {% else %}
-        <a href="#" aria-label="LinkedIn">
-        {% endif %}
+        <a href="{{ config.extra.linkedin_url | default(value="#") }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <img src="{{ get_url(path="images/linkedin.png") }}" alt="LinkedIn" class="social-icon">
         </a>
-        {% if config.extra.email %}
-        <a href="mailto:{{ config.extra.email }}" aria-label="Email">
-        {% else %}
-        <a href="#" aria-label="Email">
-        {% endif %}
+        <a href="mailto:{{ config.extra.email | default(value="#") }}" aria-label="Email">
           <img src="{{ get_url(path="images/mail.png") }}" alt="Email" class="social-icon">
         </a>
       </div>

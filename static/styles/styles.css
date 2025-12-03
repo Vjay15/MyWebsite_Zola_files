@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    font-family: "Titillium Web", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.6;
     color: var(--text);
     background: var(--bg-dark);
@@ -31,7 +31,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
 }
 
 .container {
@@ -106,8 +105,6 @@ pre {
     overflow-x: auto;
     margin-bottom: 1em;
     border: 1px solid var(--border);
-    -webkit-overflow-scrolling: touch;
-    word-wrap: break-word;
 }
 
 pre code {
@@ -142,7 +139,6 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: 1em 0;
-    word-wrap: break-word;
 }
 
 th, td {
@@ -207,7 +203,6 @@ nav {
     transition: all 0.2s;
 }
 
-nav ul,
 .nav-menu {
     list-style: none;
     display: flex;
@@ -252,39 +247,6 @@ nav a:hover {
 .recent-blogs h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-}
-
-.recent-blogs .blog-list {
-    margin-bottom: 1rem;
-}
-
-.recent-blogs p {
-    margin-top: 1.5rem;
-    margin-bottom: 0;
-}
-
-.recent-blogs-section {
-    width: 100%;
-    padding: 3rem 0;
-    border-top: 1px solid var(--border);
-    background: var(--bg-card);
-    margin-top: 2rem;
-}
-
-.recent-blogs-section h2 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.5em;
-}
-
-.recent-blogs-section .blog-list {
-    margin-bottom: 1.5rem;
-}
-
-.recent-blogs-section .view-all-link {
-    margin-top: 1.5rem;
-    margin-bottom: 0;
-    text-align: center;
 }
 
 .profile-section {
@@ -399,7 +361,6 @@ footer {
         position: relative;
     }
     
-    nav ul,
     .nav-menu {
         display: none;
         position: absolute;
@@ -411,25 +372,23 @@ footer {
         flex-direction: column;
         gap: 0;
         padding: var(--spacing) 0;
-        margin: 0;
         z-index: 100;
     }
     
-    nav ul.active,
     .nav-menu.active {
         display: flex;
     }
     
-    nav ul li {
+    .nav-menu li {
         width: 100%;
         border-bottom: 1px solid var(--border);
     }
     
-    nav ul li:last-child {
+    .nav-menu li:last-child {
         border-bottom: none;
     }
     
-    nav ul a {
+    .nav-menu a {
         display: block;
         padding: 0.75em var(--spacing);
         width: 100%;
@@ -486,7 +445,6 @@ footer {
     table {
         display: block;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
     }
     
     pre {
