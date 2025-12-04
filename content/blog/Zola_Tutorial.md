@@ -2,6 +2,7 @@
 title="Creating a Profile and Blog page using Zola"
 date="2025-12-03"
 template="blog.html"
+authors=["Vjaylakshman K",]
 +++
 Hello people :D,
 

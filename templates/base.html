@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% else %}MyBlog{% endif %}</title>
   <link rel="stylesheet" href="{{ get_url(path="styles/styles.css") }}">
+  {% block rss %}
+  {% if config.generate_feeds %}
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ get_url(path="/blog/atom.xml", trailing_slash=false) }}">
+  {% endif %}
+{% endblock %}
 </head>
 
 <body>
@@ -60,9 +65,12 @@
         <a href="mailto:{{ config.extra.email | default(value="#") }}" aria-label="Email">
           <img src="{{ get_url(path="images/mail.png") }}" alt="Email" class="social-icon">
         </a>
+        <a href="{{ get_url(path='blog/atom.xml', trailing_slash=false) }}" aria-label="RSS Feed" target="_blank" rel="noopener noreferrer">
+          <img src="{{ get_url(path="images/rss.png") }}" alt="RSS Feed" class="social-icon">
+        </a>
       </div>
       <div class="footer-text">
-        Created by Vjaylakshman K with Zola
+        Created by Vjaylakshman K with <a href="https://www.getzola.org/">Zola</a>
       </div>
     </div>
   </footer>
