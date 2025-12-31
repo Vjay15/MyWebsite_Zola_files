@@ -45,12 +45,12 @@ Any choices made can be changed by modifying the `config.toml` file later.
 > Do you want to enable syntax highlighting? [y/N]: y
 > Do you want to build a search index of the content? [y/N]: y
 
-Done! Your site was created in /Users/vjay/vjay15.github.io
+Done! Your site was created in /Users/vjay/MyWebsite_Zola_Files
 
 Get started by moving into the directory and using the built-in server: `zola serve`
 Visit https://www.getzola.org for the full documentation.
 ```
-The URL of the site is the default URL of your website, SASS is a preprocessor that allows you to use advanced features like variables, nesting etc. If you want to enable it, since I am using vanilla CSS I have disabled it. Syntax highlighting is used for codeblocks and search index allows for easy indexing of your pages for SEO optimization.
+The URL of the site is the default URL of your website, SASS is a preprocessor that allows you to use advanced features like variables, nesting etc. If you want to, enable it. Since I am using vanilla CSS I have disabled it. Syntax highlighting is used for codeblocks and search index allows for easy indexing of your pages for SEO optimization.
 
 ## Working with Zola
 After you have successfully set up Zola you will end up with the directory structure like this
@@ -82,7 +82,16 @@ Let us go through how I structure my templates
 - The blog.html is the page which is the base structure for all the blogs
 
 The page URLs are constructed based on the name of the markdown files, so for example if you take my about me page the markdown name is about.md, it is constructed like
-```https://vjay15.github.io/about```. For sections it will be ```https://example.com/section/<md_filename>```. Therefore be careful in naming your md files. The page titles for the navbar are stored in config.toml
+```https://vjay15.github.io/about```. For sections you have a _index.md present in each of them which will specify the name of the section, ordering etc, etc like \
+```
++++
+title = "Blog"
+sort_by = "date"
+template = "section.html"
+generate_feeds=true
++++
+```
+The url for sections will thus be ```https://example.com/section/<md_filename>```. Therefore be careful in naming your md files. The page titles for the navbar are stored in config.toml
 ```
  # Navigation items for navbar
 navbar_items = [
@@ -162,7 +171,7 @@ Here are the steps to add Giscus to your website:
 - Go to Giscus app [page](https://github.com/apps/giscus), install it in the new repository created by choosing the option Selected repositories -> The repository you have created.
 - Enable the Discuss feature, [Reference](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository)
 
-After this go to the Giscus [website](https://giscus.app/) and enter the information it asks for, if you don't want to read through it just scroll down and under repository enter your ```username/repositoryname```, it will show a green tick if your repository is configured properly. Scroll down copy the ```<script>``` code which looks like:
+After this visit the Giscus [website](https://giscus.app/) and enter the information it asks for, if you don't want to read through it just scroll down and under the repository field enter your ```username/repositoryname```, it will show a green tick if your repository is configured properly. Scroll down copy the ```<script>``` code which looks like:
 ```js
 <script src="https://giscus.app/client.js"
         data-repo="[ENTER REPO HERE]"
