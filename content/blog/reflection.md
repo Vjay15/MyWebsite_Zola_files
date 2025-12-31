@@ -7,7 +7,7 @@ authors=["Vjaylakshman K",]
 
 # Hello Everyone! Happy New Year :) 
 
-Had a chat with a friend today, He told me that "Years seem to pass by faster the more older you become" and he is so right, life passes by so fast since we are always so busy with one thing or the other. This year felt like that too! 
+Had a chat with a friend today, He told me that "Years seem to pass by faster the older you become" and he is so right, life passes by so fast since we are always so busy with one thing or the other. This year felt like that too! 
 The year of 2025 has been quite the year of years. I did so many things I haven't done before, learned many things I hadn't known before, went through so many emotions,
 so many trials and struggles. Just wanted to write a blog reflecting on how my year went :) 
 
@@ -46,7 +46,7 @@ Accept what you have done and what you were, it is okay, you don't need to activ
 
 I am grateful for whatever happened this year, and to everyone who made this year wonderful and amazing for me. It is very crazy to just look back and see what one year could do to a person's life. I am excited to see what the next year has in store for me hoping to strike off some of the things in my bucket list the upcoming year. 
 
-And to you, the reader, I hope that the upcoming year may give you all the courage, happiness, strength and things that you wished for, Thanks for reading and once again happpy new year :)
+And to you, the reader, I hope that the upcoming year may give you all the courage, happiness, strength and things that you wished for, Thanks for reading and once again happy new year :)
 
 > "Living my life to the best of my ability.
 Channeling energy to my thoughts, attain symmetry" 
