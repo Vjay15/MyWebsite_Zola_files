@@ -67,6 +67,7 @@ h3 {
 
 p {
     margin-bottom: 1em;
+    text-align: justify;
 }
 
 a {
@@ -87,6 +88,7 @@ ul, ol {
 
 li {
     margin-bottom: 0.5em;
+    text-align: justify;
 }
 
 code {
