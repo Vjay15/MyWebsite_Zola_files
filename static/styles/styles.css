@@ -44,7 +44,12 @@ body {
     flex: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
     line-height: 1.2;
@@ -81,7 +86,8 @@ a:hover {
     text-decoration: underline;
 }
 
-ul, ol {
+ul,
+ol {
     margin-left: 1.5em;
     margin-bottom: 1em;
 }
@@ -135,6 +141,15 @@ img {
     margin: 1em 0;
 }
 
+video {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
 hr {
     border: none;
     border-top: 1px solid var(--border);
@@ -147,7 +162,8 @@ table {
     margin: 1em 0;
 }
 
-th, td {
+th,
+td {
     border: 1px solid var(--border);
     padding: 0.5em 1em;
     text-align: left;
@@ -347,26 +363,26 @@ footer {
     .container {
         padding: var(--spacing) 0.75rem;
     }
-    
+
     .nav-container {
         padding: 0 0.75rem;
         gap: var(--spacing);
         flex-wrap: nowrap;
     }
-    
+
     .site-name {
         font-size: 1.1em;
         flex: 1;
     }
-    
+
     .menu-toggle {
         display: flex;
     }
-    
+
     nav {
         position: relative;
     }
-    
+
     .nav-menu {
         display: none;
         position: absolute;
@@ -380,93 +396,94 @@ footer {
         padding: var(--spacing) 0;
         z-index: 100;
     }
-    
+
     .nav-menu.active {
         display: flex;
     }
-    
+
     .nav-menu li {
         width: 100%;
         border-bottom: 1px solid var(--border);
     }
-    
+
     .nav-menu li:last-child {
         border-bottom: none;
     }
-    
+
     .nav-menu a {
         display: block;
         padding: 0.75em var(--spacing);
         width: 100%;
     }
-    
+
     h1 {
         font-size: 1.75em;
     }
-    
+
     h2 {
         font-size: 1.35em;
     }
-    
+
     h3 {
         font-size: 1.15em;
     }
-    
+
     .homepage {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .profile-section {
         order: -1;
         align-self: center;
     }
-    
+
     .profile-picture {
         width: 150px;
         height: 150px;
     }
-    
+
     footer {
         padding: 1.5rem 0;
     }
-    
+
     .social-links {
         gap: var(--spacing);
     }
-    
+
     .social-icon {
         width: 28px;
         height: 28px;
     }
-    
+
     .footer-text {
         font-size: 0.85em;
     }
-    
+
     .blog-list a {
         padding: 0.25em 0;
     }
-    
+
     table {
         display: block;
         overflow-x: auto;
     }
-    
+
     pre {
         font-size: 0.85em;
         padding: 0.75em;
     }
-    
+
     code {
         font-size: 0.85em;
         word-break: break-word;
     }
-    
-    ul, ol {
+
+    ul,
+    ol {
         margin-left: 1.25em;
     }
-    
+
     blockquote {
         padding: 0.75em;
         margin: 1em 0;
