@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% else %}MyBlog{% endif %}</title>
   <link rel="stylesheet" href="{{ get_url(path="styles/styles.css") }}">
+  <link rel="icon" type="image/png" href="{{ get_url(path="images/favicon.ico") }}">
   {% block rss %}
   {% if config.generate_feeds %}
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ get_url(path="/blog/atom.xml", trailing_slash=false) }}">
