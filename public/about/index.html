@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="https://vjay15.github.io/styles/styles.css">
+  
+  
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="https:&#x2F;&#x2F;vjay15.github.io" class="site-name">Vjaylakshman K</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        
+          
+            <li><a href="https://vjay15.github.io/about">About</a></li>
+          
+            <li><a href="https://vjay15.github.io/portfolio">Portfolio</a></li>
+          
+            <li><a href="https://vjay15.github.io/blog">Blog</a></li>
+          
+            <li><a href="https://vjay15.github.io/bucketlist">Bucket List</a></li>
+          
+            <li><a href="https://vjay15.github.io/files/Resume.pdf">Resume</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          navMenu.classList.toggle('active');
+          this.setAttribute('aria-expanded', !isExpanded);
+        });
+      }
+    });
+  </script>
+  
+  <section class="section">
+    <div class="container">
+      
+<h1>About</h1>
+<p>Hello Everyone! I am Vjaylakshman currently a student pursuing two degrees as you might have seen in the home page. I am a tinkerer at heart and love to checkout and learn
+new things then and there when I get the time to do so. My hobbies are mostly centered around reading books, listening to music, surfing the internet, reading manga, watching anime, reading wikipedia pages sometimes :p and at times sports.</p>
+<p>I am Indian and of Tamil origin and currently reside at Chennai, TamilNadu, India. I haven't travelled anywhere apart from the nearest big cities to me, but I have so much plans to discover the world and go around! Wow, writing an about me page is the most hardest task ever.</p>
+<p>If you want to collaborate on a project or just have a chat with me, you can contact me via email that is in the footer! I can reply to the messages sent on other platforms but the reply might take some time 😅</p>
+
+
+    </div>
+  </section>
+  
+  
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;vjay15" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="https://vjay15.github.io/images/github.png" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;vjay15" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="https://vjay15.github.io/images/linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="mailto:vjaylakshman15@gmail.com" aria-label="Email">
+          <img src="https://vjay15.github.io/images/mail.png" alt="Email" class="social-icon">
+        </a>
+        <a href="https://vjay15.github.io/blog/atom.xml" aria-label="RSS Feed" target="_blank" rel="noopener noreferrer">
+          <img src="https://vjay15.github.io/images/rss.png" alt="RSS Feed" class="social-icon">
+        </a>
+      </div>
+      <div class="footer-text">
+        Created by Vjaylakshman K with <a href="https://www.getzola.org/">Zola</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

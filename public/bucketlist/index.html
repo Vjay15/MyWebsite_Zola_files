@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bucket List</title>
+  <link rel="stylesheet" href="https://vjay15.github.io/styles/styles.css">
+  
+  
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="https:&#x2F;&#x2F;vjay15.github.io" class="site-name">Vjaylakshman K</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        
+          
+            <li><a href="https://vjay15.github.io/about">About</a></li>
+          
+            <li><a href="https://vjay15.github.io/portfolio">Portfolio</a></li>
+          
+            <li><a href="https://vjay15.github.io/blog">Blog</a></li>
+          
+            <li><a href="https://vjay15.github.io/bucketlist">Bucket List</a></li>
+          
+            <li><a href="https://vjay15.github.io/files/Resume.pdf">Resume</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          navMenu.classList.toggle('active');
+          this.setAttribute('aria-expanded', !isExpanded);
+        });
+      }
+    });
+  </script>
+  
+  <section class="section">
+    <div class="container">
+      
+<h1>My Bucket List</h1>
+<p>These are the things I want to achieve and do in my life, inspired by <a rel="external" href="https://huyenchip.com/list-100/">Chip Huyen's Bucket List</a>
+If you have any recommendations do let me know :D</p>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Trek a mountain once</li>
+<li><input disabled="" type="checkbox"/>
+Create my dream workspace</li>
+<li><input disabled="" type="checkbox"/>
+Commit to Linux Kernel</li>
+<li><input disabled="" type="checkbox"/>
+Learn Singing Properly</li>
+<li><input disabled="" type="checkbox"/>
+Write, Compose and Produce a song</li>
+<li><input disabled="" type="checkbox"/>
+Read 30 Books (Goal for 2026)</li>
+<li><input disabled="" type="checkbox"/>
+Go to a Music Festival</li>
+<li><input disabled="" type="checkbox"/>
+Try out atleast 4 different cuisines (in 2026)</li>
+<li><input disabled="" type="checkbox"/>
+Go on a solo road trip on a motorcycle</li>
+<li><input disabled="" type="checkbox"/>
+Create a library at home</li>
+<li><input disabled="" type="checkbox"/>
+Fall in love (maybe?)</li>
+<li><input disabled="" type="checkbox"/>
+Live away from home for a long time (live alone)</li>
+<li><input disabled="" type="checkbox"/>
+Learn four languages (German, Japanese, Arabic, last one should be very obscure)</li>
+<li><input disabled="" type="checkbox"/>
+Camp in Iceland</li>
+<li><input disabled="" type="checkbox"/>
+Go Skiing</li>
+<li><input disabled="" type="checkbox"/>
+Learn Surfing</li>
+<li><input disabled="" type="checkbox"/>
+Create a Community owned Library at my hometown</li>
+<li><input disabled="" type="checkbox"/>
+Take my fam on a trip to some ethereal place :D</li>
+<li><input disabled="" type="checkbox"/>
+Help my Brother :)</li>
+<li><input disabled="" type="checkbox"/>
+Visit Himalayas once</li>
+</ul>
+<script src="https://giscus.app/client.js"
+        data-repo="Vjay15/giscus-discussions"
+        data-repo-id="R_kgDOQhnuHw"
+        data-category="General"
+        data-category-id="DIC_kwDOQhnuH84CzVUk"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark_tritanopia"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+  </section>
+  
+  
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;vjay15" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="https://vjay15.github.io/images/github.png" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;vjay15" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="https://vjay15.github.io/images/linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="mailto:vjaylakshman15@gmail.com" aria-label="Email">
+          <img src="https://vjay15.github.io/images/mail.png" alt="Email" class="social-icon">
+        </a>
+        <a href="https://vjay15.github.io/blog/atom.xml" aria-label="RSS Feed" target="_blank" rel="noopener noreferrer">
+          <img src="https://vjay15.github.io/images/rss.png" alt="RSS Feed" class="social-icon">
+        </a>
+      </div>
+      <div class="footer-text">
+        Created by Vjaylakshman K with <a href="https://www.getzola.org/">Zola</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -7,7 +7,7 @@ Hello Everyone!
 Welcome to my blog!
 
 My name is Vjaylakshman, currently a
-- DevOps Engineer Intern at [SurveySparrow](https://surveysparrow.com/)
+- Product Developer Intern at [SurveySparrow](https://surveysparrow.com/)
 - B.Tech CSE Student at [BSACIST](https://crescent.education/)
 - BS in Data Science and Applications Student at [IITM BS](https://study.iitm.ac.in/ds/)
 
