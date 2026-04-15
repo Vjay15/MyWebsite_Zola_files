@@ -89,6 +89,8 @@ The reason being that BigInts use arbitrary-precision math implemented in softwa
 
 Another issue is that not just am I doing one of the slowest operations using BigInt but also 43 times, despite only needing the first 10 or 8 characters, this resulted in the worse performance overall compared to just simple hash.
 
+> Interesting blog that I found regarding BigInts in javascript: [Link](https://waspdev.com/articles/2025-08-16/is-js-bigint-broken)
+
 ### Final Approach - SHAKE hash algorithm
 The final algorithm that I chose is the newest family of SHA algorithm, SHA3 and a variant of it called SHAKE. SHA3 algorithm was a bit different from the traditional SHA2 (SHA-256 etc) where instead of trying to create fixed size blocks based on the type of algorithm, here we try to absorb the entire text into a 1600 unit block like a sponge.
 
