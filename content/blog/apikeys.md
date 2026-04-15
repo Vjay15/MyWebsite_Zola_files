@@ -24,6 +24,8 @@ The prefix is just extra metadata that is useful for the end user as well as the
 
 The next few characters in my example key is just random hex string whose length could vary across implementations. And at last either clubbed together with the hex string or separated by an '_' is the checksum. The reason behind having a checksum is that it allows you to verify first whether this API key is even valid before hitting the DB, since either there could be a mistype by the user or maybe a missed character.
 
+> NOTE: Thanks to the lovely people of hackernews [Link to the post](https://news.ycombinator.com/item?id=47739278) I found out that the prefix as well as the checksum is for offline secret scanning :D Thank you so much for pointing it out guys
+
 This is the most widely followed industry format for API keys. There can be special cases such as when some part of the prefix of hex characters can be just a unique hex ID of a single account. I will further explain the reason behind why this is done.
 
 These API keys are then hashed and stored in the DB, therefore once created, it has to be copied or it's lost forever. This makes it secure since it's now hashed, just like a password, so the contents are unknown to everyone who has access to the system. This is why most of the systems that support API keys, ask you to copy it after creation.
@@ -119,3 +121,5 @@ Having to work on an actual problem in real life taught me about how much mistak
 This was such a good learning experience for me about not just API key design but also how B tree index works for strings, how hash algorithm works and also how slow BigInt operations can be.
 
 At the end of the day we have an API key system that is working :D Thanks for reading this blog, I hope you all have a nice day :)
+
+> To people from hackernews: I am so happy that you all liked my blog :D. Never in my life I thought I will be in the front page of hackernews 😭 Gave me so much motivation to write more blogs in the future, I hope all of you wonderful people have an amazing day today :D 
