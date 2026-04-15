@@ -22,7 +22,7 @@ API keys are usually formatted in this way.
 
 The prefix is just extra metadata that is useful for the end user as well as the developer to figure out the kind of API key it is. For example github uses the gh(o|p) prefix, stripe uses sk_live or sk_test prefix.
 
-The next few characters in my example key is just random hex string whose length could vary across implementations. And at last either clubbed together with the hex string or separated by an '_' is the checksum. The reason behind having a checksum is that it allows you to verify first whether this API key is even valid before hitting the DB, since either there could be a mistype by the user or maybe a missed character.
+The next few characters in my example key is just random hex string or randomly generated string whose length could vary across implementations. And at last either clubbed together with the hex string or separated by an '_' is the checksum. The reason behind having a checksum is that it allows you to verify first whether this API key is even valid before hitting the DB, since either there could be a mistype by the user or maybe a missed character.
 
 > NOTE: Thanks to the lovely people of hackernews [Link to the post](https://news.ycombinator.com/item?id=47739278) I found out that the prefix as well as the checksum is for offline secret scanning :D Thank you so much for pointing it out guys
 
