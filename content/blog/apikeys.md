@@ -17,8 +17,7 @@ Sounds simple enough? so all it is, is just a string that allows you to authenti
 ## Format of API Keys
 API keys are usually formatted in this way.
 
-<img src="/images/sample_token.png" alt="Sample API key" width="600" style="display: block; margin: 0 auto;" />
-<br>
+![Sample API key](/images/sample_token.png)
 
 The prefix is just extra metadata that is useful for the end user as well as the developer to figure out the kind of API key it is. For example github uses the gh(o|p) prefix, stripe uses sk_live or sk_test prefix.
 
