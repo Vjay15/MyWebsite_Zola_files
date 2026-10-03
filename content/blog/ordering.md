@@ -7,7 +7,7 @@ authors=["Vjaylakshman K",]
 
 Hey my epic and cool friends on the internet, I hope you have been doing well! it's your junior engineer from last time who, ahem, made designing API keys sound like rocket science. I have finally become a full-timer (MTS @ [SparrowCRM](https://sparrowcrm.com)) and I am learning lots of cool things and also bashing my head against the wall sometimes.
 
-This time I am going to explain some cool things I learn about ordering items! 
+This time I am going to explain some cool things I learnt about ordering items! 
 
 ## The task
 We use React Flow at work for all graph based systems in the product and I was assigned the task of supporting adding in between nodes in one of the features of SparrowCRM, Smart Router, which allows you to assign leads based on a preset of rules. Here is how it basically used to arrange the nodes in the graph before.
