@@ -1,5 +1,5 @@
 +++
-title="Ordering items for the orderly"
+title="Ordering Items for the Orderly"
 date="2026-10-03"
 template="blog.html"
 authors=["Vjaylakshman K",]
@@ -7,7 +7,7 @@ authors=["Vjaylakshman K",]
 
 Hey my epic and cool friends on the internet, I hope you have been doing well! it's your junior engineer from last time who, ahem, made designing API keys sound like rocket science. I have finally become a full-timer (MTS @ [SparrowCRM](https://sparrowcrm.com)) and I am learning lots of cool things and also bashing my head against the wall sometimes.
 
-This time I am going to explain some cool things I learnt about ordering items! 
+This time I am going to explain some cool things I learnt about ordering items :D ! 
 
 ## The task
 We use React Flow at work for all graph based systems in the product and I was assigned the task of supporting adding in between nodes in one of the features of SparrowCRM, Smart Router, which allows you to assign leads based on a preset of rules. Here is how it basically used to arrange the nodes in the graph before.
@@ -169,6 +169,6 @@ The timings may vary between runs due to db write latency, but they capture most
 Eventually I settled on the float based fractional indexing approach, reason being that I just wanted to use what seems to be easy to understand, yes lexicographic approach is understandable and I could implement it but one thing I learnt from my earlier approaches is to keep things simple. Along with that, for my use case, a user is going to build a router and then is probably not going to use it for quite a long time so frequent inserts are not a concern of mine. Use the right tool for the right job.
 
 ## Conclusion:
-I never thought that ordering items could be this thoughtful haha, but I learned so much that I felt I had to write an article on it. Thanks for reading through this. Hope you all have a great day.
+I never thought that ordering items could be this thoughtful haha, but I learned so much that I felt I had to write an article on it. Thanks for reading through this. Hope you all have a great day :)
 
 > AI USAGE DISCLAIMER: I used AI in order to find articles apart from whatever I could do via a search engine, help me visualise and explain and understand tradeoffs. For writing I wrote the initial draft fully by hand and then used AI to fact check my claims and fix my silly spelling mistakes. And the test bench is also fully AI generated with human review.
