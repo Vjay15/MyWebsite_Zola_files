@@ -1,11 +1,11 @@
 +++
 title="Ordering items for the orderly"
-date="2026-09-26"
+date="2026-10-03"
 template="blog.html"
 authors=["Vjaylakshman K",]
 +++
 
-Hey my epic and cool friends on the internet, it's your junior engineer from last time who, ahem, made designing API keys sound like rocket science. I have finally become a full-timer (MTS @ [SparrowCRM](https://sparrowcrm.com)) and I am learning lots of cool things and also bashing my head against the wall sometimes. I hope you are doing well :)
+Hey my epic and cool friends on the internet, I hope you have been doing well! it's your junior engineer from last time who, ahem, made designing API keys sound like rocket science. I have finally become a full-timer (MTS @ [SparrowCRM](https://sparrowcrm.com)) and I am learning lots of cool things and also bashing my head against the wall sometimes.
 
 This time I am going to explain some cool things I learn about ordering items! 
 
@@ -29,6 +29,7 @@ The first thing I did was decouple the position into separate horizontal and ver
 
 ## What if 1 becomes 1000?
 
+The decoupling alone wont help since, essentially they were just single digit numbers and since it's integer based ordering I would've to update every node downstream if I have to just add a node in between.
 ```
 keys = [1, 2, 3, 4]
 
@@ -43,8 +44,7 @@ insert_at(i):
     return keys[i]                           // take the freed slot
 ```
 
-
-Now that our X and Y indices are separate, the issue at hand is simple, we have 1 and 2 in between we can't add integers, let's make it 1000 and 2000, now we have a staggering 1000 nodes to add in between! 
+Instead what if I just made 1 as 1000 and 2 as 2000, now I have 1000 nodes to add in between!
 
 ![Integer ordering with a wide gap, nodes at 1000, 2000, 3000](/images/gap_integer_order.png)
 
@@ -86,7 +86,7 @@ insert_at(i):
 ```
 
 
-What if we throw away the approach of using integers and instead head the path of floats, this is one of the approaches taken by Figma as well. Given two integers such as 1 and 2, we keep dividing them to find the midpoint, easy and they give floats that sit well in between the two nodes.
+What if we throw away the approach of using integers and instead head the path of floats, this is one of the approaches taken by Figma as well ([Realtime Editing of Ordered Sequences](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/)). Given two integers such as 1 and 2, we keep dividing them to find the midpoint, easy and they give floats that sit well in between the two nodes.
 
 ![Float based fractional indexing, finding the midpoint between two nodes](/images/float_order.png)
 
@@ -95,7 +95,7 @@ But there is a problem where the floats can eventually reach the precision wall;
 In case it reaches that scenario, we need to just rebalance aka take the already existing indexes of all elements and redistribute the indices to 1, 2, 3, 4 etc. I also combined the approach of having integers spaced a bit wider like 1000, 2000, 3000 etc. With this approach I got approximately 53 successive inserts in an interval before it hit rebalance. This solved most of my problems. But I delved deeper.
 
 
-## Here comes Lexicographic Fractional Indexing
+## Fractional Indexing but make it strings??
 
 For a system which has frequent inserts and deletes happening at all times, Fractional Indexing based on floats is not scalable: they will hit the 53 insert mark so quickly and would have to rebalance often, and this will result in the system becoming slower overall.
 
@@ -123,7 +123,7 @@ between(a0, a1) -> "a0V"      // there is ALWAYS a longer string that fits
 
 This is such a beautiful and wonderfully scalable approach. The rebalance trigger is no more losing precision, but the guardrails we set, we are free to choose the rebalance criteria and if it has to be rebalanced, it just reassigns new indices for each node.
 
-I tried to reason this out with Greenspan's notebook but was left with some confusion and looked into Rustam's article which cleared most of my doubts, a great read [Fractional Indexing: Ordering Items in Collaborative Lists](https://n69.in/blog/fractional-indexing/)
+I tried to reason this out with Greenspan's notebook but was left with some confusion and looked into Rustam's article which cleared most of my doubts, it's a great read: [Fractional Indexing: Ordering Items in Collaborative Lists](https://n69.in/blog/fractional-indexing/)
 
 Atlassian's LexoRank is built on top of this core machinery, but they add extra features to it. A rank of an item in Jira looks like this 
 
@@ -143,7 +143,7 @@ Finally I wanted to see how all of them compare against each other. I ran everyt
 
 In simple words: mixed is the normal case, a graph like a real router where inserts happen all over the place. Squeeze is the worst case, just two nodes with every insert going into the same gap between them.
 
-> Disclaimer: Since this was just a disposable test, I used an LLM to generate the tests, run the experiment and I manually verified them.
+> Disclaimer: Since this was just a disposable test, I used an LLM to generate the tests, ran the experiment and I manually verified them.
 
 
 | Strategy | Avg TAT (mixed) | Max TAT (mixed) | Rebalances (mixed / 300) | Inserts survived before 1st rebalance (squeeze) | Rows updated in 1st rebalance | Rebalance latency | Longest key |
@@ -171,4 +171,4 @@ Eventually I settled on the float based fractional indexing approach, reason bei
 ## Conclusion:
 I never thought that ordering items could be this thoughtful haha, but I learned so much that I felt I had to write an article on it. Thanks for reading through this. Hope you all have a great day.
 
-> AI USAGE DISCLAIMER: I used AI in order to find articles apart from whatever I could do via a search enginer, help me visualise and explain and understand tradeoffs. For writing I wrote the initial draft fully by hand and then used AI to fact check my claims and fix my silly spelling mistakes. And the test bench is also fully AI generated with human review.
+> AI USAGE DISCLAIMER: I used AI in order to find articles apart from whatever I could do via a search engine, help me visualise and explain and understand tradeoffs. For writing I wrote the initial draft fully by hand and then used AI to fact check my claims and fix my silly spelling mistakes. And the test bench is also fully AI generated with human review.

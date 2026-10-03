@@ -7,7 +7,7 @@ Hello Everyone!
 Welcome to my blog!
 
 My name is Vjaylakshman, currently a
-- Member of Technicall Staff at [SurveySparrow](https://surveysparrow.com/), building [SparrowCRM](https://sparrowcrm.com)
+- Member of Technical Staff at [SurveySparrow](https://surveysparrow.com/), building [SparrowCRM](https://sparrowcrm.com)
 - B.Tech CSE at [BSACIST](https://crescent.education/)
 - Diploma in Data Science and Programming at [IITM BS](https://study.iitm.ac.in/ds/)
 
