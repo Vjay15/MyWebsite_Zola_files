@@ -18,8 +18,7 @@ so many trials and struggles. Just wanted to write a blog reflecting on how my y
 the work since my friend got way too busy than he expected to be(which is fine!). It was such a chore managing user registration, finance, arrangements for seating, arrangements for refreshments, PoC(Point of Contact) with the judges. I even took care of literally arranging the tables myself haha. It was so much work but I earned so much experience and insight on how an event is organised. 
 - I went on a trip to a Hill Station for the first time in my life, It was the Munar Hill Station. I've never been to such a cold place and a breathtaking one as well, every turn and curve had a scenery that felt way too surreal and dreamlike.
 
-<img src="/images/scenery.png" alt="Scenery from Munar Hill Station" width="600" style="display: block; margin: 0 auto;" />
-<br>
+![Scenery from Munar Hill Station](/images/scenery.png)
 
 - I joined a book club and re-started my reading habit, feeling really happy and content about that. The club is amazing and the books they come up with are unique sometimes amazing and sometimes so funny how bad books could be. Love the bunch there!
 - For the first time felt loved by a friend group, yes I sound cliche but I am glad I found (more) people who love and cherish me. Love them from the bottom of my heart.

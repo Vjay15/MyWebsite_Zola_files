@@ -141,6 +141,17 @@ img {
     margin: 1em 0;
 }
 
+/* Standalone content images (Zola wraps a lone image in its own <p>):
+   center them and give the paragraph breathing room above and below.
+   Images that share a paragraph with other content keep the default spacing. */
+.container p:has(> img:only-child) {
+    margin: 1.75em 0;
+}
+
+.container p:has(> img:only-child) > img {
+    margin: 0 auto;
+}
+
 video {
     max-width: 100%;
     max-height: 500px;
