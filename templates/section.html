@@ -5,12 +5,12 @@
 {{ section.content | safe }}
 
 {% if section.pages %}
-  <ul class="blog-list">
+  <ul class="bloglist">
     {% for page in section.pages %}
       <li>
         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
         {% if page.date %}
-          <span class="date">{{ page.date | date(format="%B %d, %Y") }}</span>
+          <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
         {% endif %}
       </li>
     {% endfor %}

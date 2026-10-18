@@ -1,6 +1,9 @@
 # The URL the site will be built for
 base_url = "https://vjay15.github.io"
 
+# Site title (used in <title>, Atom feed title, etc.)
+title = "Vjaylakshman K"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
@@ -46,16 +49,6 @@ include_content = true
 index_format = "elasticlunr_json"
 
 generate_feeds = true
-# Feed filename(s) - can be a string or array. Defaults to "atom.xml"
-# For site-level feeds, this will be at base_url/atom.xml
 feed_filenames = ["atom.xml"]
-# The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
-# Note for Zola 0.19.X users: when `feed_filenames` has two filenames, only the first one will be linked in the footer.
-feed_icon = true
-
-# Show the full post content in the Atom feed.
-# If it's set to false, only the description or summary will be shown.
 full_content_in_feed = true
-
-# Author information for feeds
 author = "Vjaylakshman K"
