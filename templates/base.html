@@ -4,77 +4,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% else %}MyBlog{% endif %}</title>
+  <title>{% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% else %}Vjaylakshman K{% endif %}</title>
   <link rel="stylesheet" href="{{ get_url(path="styles/styles.css") }}">
   <link rel="icon" type="image/png" href="{{ get_url(path="images/favicon.ico") }}">
-  {% block rss %}
   {% if config.generate_feeds %}
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{{ get_url(path="/blog/atom.xml", trailing_slash=false) }}">
   {% endif %}
-{% endblock %}
 </head>
 
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="{{ config.base_url }}" class="site-name">Vjaylakshman K</a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu">
-        {% if config.extra.navbar_items %}
-          {% for item in config.extra.navbar_items %}
-            <li><a href="{{ get_url(path=item.url) }}">{{ item.name }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-    </div>
-  </nav>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      
-      if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          navMenu.classList.toggle('active');
-          this.setAttribute('aria-expanded', !isExpanded);
-        });
-      }
-    });
-  </script>
-  
-  <section class="section">
-    <div class="container">
-      {% block content %} {% endblock content %}
-    </div>
-  </section>
-  
-  
-  <footer>
-    <div class="footer-container">
-      <div class="social-links">
-        <a href="{{ config.extra.github_url | default(value="#") }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img src="{{ get_url(path="images/github.png") }}" alt="GitHub" class="social-icon">
-        </a>
-        <a href="{{ config.extra.linkedin_url | default(value="#") }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <img src="{{ get_url(path="images/linkedin.png") }}" alt="LinkedIn" class="social-icon">
-        </a>
-        <a href="mailto:{{ config.extra.email | default(value="#") }}" aria-label="Email">
-          <img src="{{ get_url(path="images/mail.png") }}" alt="Email" class="social-icon">
-        </a>
-        <a href="{{ get_url(path='blog/atom.xml', trailing_slash=false) }}" aria-label="RSS Feed" target="_blank" rel="noopener noreferrer">
-          <img src="{{ get_url(path="images/rss.png") }}" alt="RSS Feed" class="social-icon">
-        </a>
-      </div>
-      <div class="footer-text">
-        Created by Vjaylakshman K with <a href="https://www.getzola.org/">Zola</a>
-      </div>
-    </div>
-  </footer>
-</body>
 
+<div id="wrap">
+
+  <div id="header">
+    <button id="theme-toggle" type="button" onclick="toggleTheme()">light</button>
+    <div id="sitename"><a href="{{ config.base_url }}">{{ config.title | default(value="Vjaylakshman K") }}</a></div>
+    <div id="nav">
+      {% if config.extra.navbar_items %}
+        {% for item in config.extra.navbar_items %}
+          <a href="{{ get_url(path=item.url) }}">{{ item.name }}</a>{% if not loop.last %} &middot; {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div id="content">
+    {% block content %} {% endblock content %}
+  </div>
+
+  <div id="footer">
+    <a href="{{ config.extra.github_url }}">github</a> &middot;
+    <a href="{{ config.extra.linkedin_url }}">linkedin</a> &middot;
+    <a href="mailto:{{ config.extra.email }}">email</a> &middot;
+    <a href="{{ get_url(path='blog/atom.xml', trailing_slash=false) }}">rss</a>
+    <br>
+    <span id="footernote">Created by Vjaylakshman K &mdash; generated with <a href="https://www.getzola.org/">Zola</a></span>
+  </div>
+
+</div>
+
+<script>
+function applyTheme(t) {
+  document.documentElement.className = (t === "light") ? "light" : "";
+  var b = document.getElementById("theme-toggle");
+  if (b) { b.innerHTML = (t === "light") ? "dark" : "light"; }
+}
+function toggleTheme() {
+  var t = (document.documentElement.className === "light") ? "dark" : "light";
+  applyTheme(t);
+  try { localStorage.setItem("theme", t); } catch (e) {}
+}
+(function () {
+  var t = null;
+  try { t = localStorage.getItem("theme"); } catch (e) {}
+  if (t !== "light" && t !== "dark") {
+    try {
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) { t = "light"; }
+    } catch (e) {}
+  }
+  applyTheme(t === "light" ? "light" : "dark");
+})();
+
+/* dodge the plushie: pat = hop, first pat = :3 */
+(function () {
+  var d = document.getElementById("dodge");
+  var c = document.getElementById("dodge-caption");
+  if (!d || !d.addEventListener) { return; }
+  d.addEventListener("click", function () {
+    d.className = "";
+    /* restart the animation if its already playing */
+    void d.offsetWidth;
+    d.className = "hop";
+    if (c && c.innerHTML.indexOf(":3") === -1) {
+      c.innerHTML = ":3";
+    }
+  });
+})();
+</script>
+
+</body>
 </html>

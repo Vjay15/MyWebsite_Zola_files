@@ -1,507 +1,224 @@
-:root {
-    --bg-dark: #1a1a1a;
-    --bg-card: #252525;
-    --bg-code: #2d2d2d;
-    --border: #333;
-    --text: #e0e0e0;
-    --text-light: #f5f5f5;
-    --text-muted: #888;
-    --link: #66b3ff;
-    --link-hover: #99ccff;
-    --max-width: 800px;
-    --spacing: 1rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-}
+/* Simple, classic, browser-proof stylesheet. CSS 2.1 only.
+   Dark (default): Catppuccin Mocha + Nord accents.
+   Light: Catppuccin Latte, via html.light class. */
 
 body {
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: Verdana, Geneva, "DejaVu Sans", Arial, sans-serif;
+    font-size: 97%;
     line-height: 1.6;
-    color: var(--text);
-    background: var(--bg-dark);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 2rem var(--spacing);
-}
-
-.section {
-    width: 100%;
-    flex: 1;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    line-height: 1.2;
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-h1 {
-    font-size: 2em;
-    margin-top: 0;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-h3 {
-    font-size: 1.25em;
-}
-
-p {
-    margin-bottom: 1em;
-    text-align: justify;
-}
-
-a {
-    color: var(--link);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
-}
-
-ul,
-ol {
-    margin-left: 1.5em;
-    margin-bottom: 1em;
-}
-
-li {
-    margin-bottom: 0.5em;
-    text-align: justify;
-}
-
-code {
-    font-family: "SF Mono", Monaco, Consolas, monospace;
-    font-size: 0.9em;
-    background: var(--bg-code);
-    color: #f8f8f2;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-}
-
-pre {
-    background: var(--bg-code);
-    padding: 1em;
-    border-radius: 5px;
-    overflow-x: auto;
-    margin-bottom: 1em;
-    border: 1px solid var(--border);
-}
-
-pre code {
-    background: transparent;
-    padding: 0;
-}
-
-blockquote {
-    border-left: 4px solid #555;
-    background: var(--bg-card);
-    padding: 1em;
-    margin: 1em 0;
-    color: #b0b0b0;
-    font-style: italic;
-    border-radius: 3px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1em 0;
-}
-
-/* Standalone content images (Zola wraps a lone image in its own <p>):
-   center them and give the paragraph breathing room above and below.
-   Images that share a paragraph with other content keep the default spacing. */
-.container p:has(> img:only-child) {
-    margin: 1.75em 0;
-}
-
-.container p:has(> img:only-child) > img {
-    margin: 0 auto;
-}
-
-video {
-    max-width: 100%;
-    max-height: 500px;
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 1em auto;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2em 0;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 1em 0;
-}
-
-th,
-td {
-    border: 1px solid var(--border);
-    padding: 0.5em 1em;
-    text-align: left;
-}
-
-th {
-    background: var(--bg-code);
-    color: var(--text-light);
-    font-weight: 600;
-}
-
-td {
-    background: var(--bg-card);
-}
-
-tr:nth-child(even) td {
-    background: #2a2a2a;
-}
-
-nav {
-    width: 100%;
-    margin-bottom: 2rem;
-    padding: var(--spacing) 0;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg-dark);
-}
-
-.nav-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.site-name {
-    font-size: 1.25em;
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5em;
-}
-
-.menu-toggle span {
-    width: 24px;
-    height: 2px;
-    background: var(--text);
-    transition: all 0.2s;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    color: #cdd6f4;            /* mocha text */
+    background-color: #1e1e2e; /* mocha base */
     margin: 0;
-    padding: 0;
 }
 
-nav a {
-    color: var(--text);
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: var(--link);
-    text-decoration: none;
-}
-
-.homepage {
-    display: flex;
-    align-items: flex-start;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-.homepage-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-.homepage-content h2 {
-    margin-top: 0;
-}
-
-.recent-blogs {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-}
-
-.recent-blogs h2 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.profile-section {
-    flex-shrink: 0;
-}
-
-.profile-picture {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--border);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.blog-list {
-    list-style: none;
-    margin: 2em 0;
-    padding: 0;
-}
-
-.blog-list li {
-    margin-bottom: 1.5em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid var(--border);
-}
-
-.blog-list li:last-child {
-    border-bottom: none;
-}
-
-.blog-list a {
-    font-size: 1.1em;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 0.5em;
-}
-
-.blog-list .date {
-    color: var(--text-muted);
-    font-size: 0.9em;
-}
-
-footer {
-    width: 100%;
-    margin-top: 4rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    background: var(--bg-dark);
-}
-
-.footer-container {
-    max-width: var(--max-width);
+#wrap {
+    max-width: 46em;
     margin: 0 auto;
-    padding: 0 var(--spacing);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing);
+    padding: 1em 1.25em 3em 1.25em;
 }
 
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Monospace accents: site name, nav, toggle, dates, code, footer, captions */
+#sitename, #nav, #theme-toggle, #content pre, #content code,
+.postmeta, .bloglist .date, #footer, .profile p {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace;
 }
 
-.social-links a {
-    transition: opacity 0.2s, transform 0.2s;
+/* Small muted text: toggle, dates, post meta, footer, photo captions */
+#theme-toggle, .postmeta, .bloglist .date, #footer, #content .profile p {
+    font-size: 0.85em;
+    color: #7f849c;
 }
 
-.social-links a:hover {
-    opacity: 0.8;
-    transform: scale(1.1);
-    text-decoration: none;
+/* ---------- header / nav / toggle ---------- */
+
+#header {
+    border-bottom: 2px solid #89b4fa;
+    padding-bottom: 0.5em;
+    margin-bottom: 2em;
 }
 
-.social-icon {
-    width: 32px;
-    height: 32px;
-    display: block;
-    object-fit: contain;
+#sitename { font-size: 1.7em; font-weight: bold; margin-bottom: 0.3em; }
+#sitename a { color: #cdd6f4; text-decoration: none; }
+#sitename a:hover { text-decoration: underline; }
+
+#nav { font-size: 0.95em; }
+#nav a { color: #88c0d0; text-decoration: none; }
+#nav a:hover { text-decoration: underline; }
+
+#theme-toggle {
+    float: right;
+    background: none;
+    border: 1px solid #585b70;
+    padding: 0.15em 0.6em;
+    cursor: pointer;
+    margin-top: 0.3em;
 }
 
-.footer-text {
-    color: var(--text-muted);
-    font-size: 0.9em;
+#theme-toggle:hover { color: #cdd6f4; border-color: #cdd6f4; }
+
+/* ---------- content ---------- */
+
+#content h1 { font-size: 1.6em;  margin: 0 0 0.25em 0; }
+#content h2 { font-size: 1.35em; margin: 1.5em 0 0.5em 0; }
+#content h3 { font-size: 1.15em; margin: 1.25em 0 0.4em 0; }
+
+#content p, #content li { text-align: justify; }
+#content p { margin: 0 0 1em 0; }
+#content ul, #content ol { margin: 0 0 1em 1.75em; padding: 0; }
+#content li { margin-bottom: 0.4em; }
+
+#content a { color: #a9c8f5; }        /* pale light blue */
+#content a:hover { color: #c5ddff; }
+
+/* centered framed media */
+#content img, #content video { max-width: 100%; display: block; margin: 1.25em auto; }
+#content img {
+    box-sizing: border-box; /* padding+border count inside max-width */
+    height: auto;
+    border: 1px solid #585b70;
+    padding: 0.4em;
+    background-color: #313244;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: var(--spacing) 0.75rem;
+#content hr { border: 0; border-top: 1px solid #45475a; margin: 2em 0; }
+
+/* ---------- code ---------- */
+
+#content pre {
+    font-size: 0.85em;
+    background-color: #181825; /* mocha mantle */
+    border: 1px solid #313244;
+    border-left: 4px solid #88c0d0; /* nord frost4 */
+    padding: 0.75em 1em;
+    margin: 0 0 1.25em 0;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+#content code { font-size: 0.9em; background-color: #181825; padding: 0.1em 0.25em; }
+#content pre code { background-color: transparent; padding: 0; font-size: 1em; }
+
+/* ---------- blockquotes & tables ---------- */
+
+#content blockquote {
+    margin: 0 0 1.25em 1.5em;
+    padding: 0.25em 1em;
+    border-left: 4px solid #585b70;
+    color: #a6adc8;
+    font-style: italic;
+}
+
+#content table { border-collapse: collapse; margin: 0 0 1.25em 0; }
+#content th, #content td { border: 1px solid #585b70; padding: 0.4em 0.75em; text-align: left; vertical-align: top; }
+#content th { background-color: #313244; }
+
+/* ---------- blog post lists ---------- */
+
+.postmeta { margin: 0 0 1.5em 0; }
+
+.bloglist { margin: 0 0 1.5em 0; padding: 0; list-style: none; }
+.bloglist li { margin-bottom: 1.1em; padding-bottom: 0.9em; border-bottom: 1px dotted #585b70; }
+.bloglist a { font-weight: bold; }
+.bloglist .date { display: block; }
+
+/* ---------- floated profile photo (homepage, about) ---------- */
+
+.profile {
+    float: right;
+    margin: 0 0 1.25em 1.75em;
+    border: 1px solid #585b70;
+    padding: 4px;
+    background-color: #313244;
+}
+
+#content .profile img {
+    width: 160px;
+    height: 160px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    max-width: none;
+}
+
+#content .profile p {
+    margin: 0.5em 0 0 0;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+/* ---------- dodge the plushie easter egg ---------- */
+
+#dodge { cursor: pointer; }
+#dodge.hop { animation: hop 0.4s ease-out; }
+
+/* 0%/100% fall back to translateY(0), the resting state */
+@keyframes hop {
+    30% { transform: translateY(-14px); }
+    50% { transform: translateY(0); }
+    65% { transform: translateY(-5px); }
+}
+
+/* ---------- footer ---------- */
+
+#footer { margin-top: 3em; border-top: 1px solid #45475a; padding-top: 1em; }
+#footer a { color: #88c0d0; }
+#footernote { color: #6c7086; }
+
+/* ============================================================
+   LIGHT THEME (Catppuccin Latte) — html.light color swaps only
+   ============================================================ */
+
+/* text */
+html.light body { color: #4c4f69; background-color: #eff1f5; }
+html.light #sitename a { color: #4c4f69; }
+html.light #content a { color: #5d9ceb; }
+html.light #content a:hover { color: #7ab2f5; }
+html.light #nav a, html.light #footer a { color: #1e66f5; }
+
+/* muted text */
+html.light #theme-toggle, html.light .postmeta, html.light .bloglist .date,
+html.light #footer, html.light #content .profile p { color: #6c6f85; }
+html.light #footernote { color: #8c8fa1; }
+
+/* borders */
+html.light #header { border-bottom-color: #1e66f5; }
+html.light #content img, html.light #content hr, html.light #content th,
+html.light #content td, html.light .bloglist li, html.light .profile,
+html.light #footer { border-color: #bcc0cc; }
+
+/* surfaces */
+html.light #content img, html.light .profile { background-color: #dce0e8; }
+html.light #content th { background-color: #ccd0da; }
+html.light #content pre { background-color: #e6e9ef; border-color: #ccd0da; border-left-color: #1e66f5; }
+html.light #content code { background-color: #e6e9ef; }
+
+/* monokai inline colors would be unreadable on light: force dark-on-light */
+html.light #content pre span { color: #4c4f69 !important; }
+
+/* misc */
+html.light #content blockquote { color: #6c6f85; }
+html.light #theme-toggle:hover { color: #4c4f69; border-color: #4c4f69; }
+
+/* ============================================================
+   NARROW SCREENS — no floats (they crush text on phones):
+   photos center above text; nav wraps centered.
+   Old browsers without @media just get the desktop layout.
+   ============================================================ */
+
+@media (max-width: 480px) {
+    #nav { text-align: center; }
+
+    .profile {
+        float: none;
+        display: table;      /* shrink-to-fit, works everywhere */
+        margin: 0 auto 1.5em auto;
     }
 
-    .nav-container {
-        padding: 0 0.75rem;
-        gap: var(--spacing);
-        flex-wrap: nowrap;
-    }
+    #content p, #content li { text-align: left; } /* justify gets gappy when narrow */
 
-    .site-name {
-        font-size: 1.1em;
-        flex: 1;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    nav {
-        position: relative;
-    }
-
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-dark);
-        border-top: 1px solid var(--border);
-        flex-direction: column;
-        gap: 0;
-        padding: var(--spacing) 0;
-        z-index: 100;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-menu li:last-child {
-        border-bottom: none;
-    }
-
-    .nav-menu a {
-        display: block;
-        padding: 0.75em var(--spacing);
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 1.75em;
-    }
-
-    h2 {
-        font-size: 1.35em;
-    }
-
-    h3 {
-        font-size: 1.15em;
-    }
-
-    .homepage {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .profile-section {
-        order: -1;
-        align-self: center;
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-    }
-
-    footer {
-        padding: 1.5rem 0;
-    }
-
-    .social-links {
-        gap: var(--spacing);
-    }
-
-    .social-icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .footer-text {
-        font-size: 0.85em;
-    }
-
-    .blog-list a {
-        padding: 0.25em 0;
-    }
-
-    table {
+    /* wide tables scroll horizontally instead of breaking the page */
+    #content table {
         display: block;
         overflow-x: auto;
-    }
-
-    pre {
-        font-size: 0.85em;
-        padding: 0.75em;
-    }
-
-    code {
-        font-size: 0.85em;
-        word-break: break-word;
-    }
-
-    ul,
-    ol {
-        margin-left: 1.25em;
-    }
-
-    blockquote {
-        padding: 0.75em;
-        margin: 1em 0;
-        border-left-width: 3px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        max-width: 100%;
-        box-sizing: border-box;
     }
 }

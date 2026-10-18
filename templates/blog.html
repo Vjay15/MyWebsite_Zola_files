@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>{{ page.title }}</h1>
-<p><i>{% if page.authors %}{{ page.authors | join(sep=", ") }}{% elif config.author %}{{ config.author }}{% endif %} • {{ page.date | date(format="%B %d, %Y") }}</i></p>
+<p class="postmeta">{% if page.authors %}{{ page.authors | join(sep=", ") }}{% elif config.author %}{{ config.author }}{% endif %} &middot; {{ page.date | date(format="%B %d, %Y") }}</p>
 {{ page.content | safe }}
 <script src="https://giscus.app/client.js"
         data-repo="Vjay15/giscus-discussions"
