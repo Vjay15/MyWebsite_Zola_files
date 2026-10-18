@@ -109,6 +109,11 @@ body {
 }
 
 #content table { border-collapse: collapse; margin: 0 0 1.25em 0; }
+#content table {
+    display: block;           /* shrink-wrap to content width */
+    max-width: 100%;
+    overflow-x: auto;         /* scroll if wider than the column */
+}
 #content th, #content td { border: 1px solid #585b70; padding: 0.4em 0.75em; text-align: left; vertical-align: top; }
 #content th { background-color: #313244; }
 
@@ -216,9 +221,6 @@ html.light #theme-toggle:hover { color: #4c4f69; border-color: #4c4f69; }
 
     #content p, #content li { text-align: left; } /* justify gets gappy when narrow */
 
-    /* wide tables scroll horizontally instead of breaking the page */
-    #content table {
-        display: block;
-        overflow-x: auto;
-    }
+    /* wide tables scroll horizontally instead of breaking the page
+       (covered globally above; nothing extra needed here) */
 }
