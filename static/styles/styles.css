@@ -219,8 +219,6 @@ html.light #theme-toggle:hover { color: #4c4f69; border-color: #4c4f69; }
         margin: 0 auto 1.5em auto;
     }
 
-    #content p, #content li { text-align: left; } /* justify gets gappy when narrow */
-
     /* wide tables scroll horizontally instead of breaking the page
        (covered globally above; nothing extra needed here) */
 }
